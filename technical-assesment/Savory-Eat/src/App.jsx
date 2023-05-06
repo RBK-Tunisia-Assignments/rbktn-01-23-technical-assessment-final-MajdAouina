@@ -3,6 +3,8 @@ import React ,{useState}from "react";
 import "./App.css";
 import Home from "./components/Home.jsx";
 import AllRecepies from "./components/AllRecipies.jsx"
+
+
 function App() {
 const [view,setView]=useState('Home')
   let changeView = (view) => {
@@ -10,6 +12,11 @@ const [view,setView]=useState('Home')
   };
   return (
     <div className="App">
+    <BrowserRouter>
+      <Routes>
+        <Route path="/" element={<AllRecepies/>} />
+      </Routes>
+    </BrowserRouter>
       <nav className="nav">
         <div
           className="nav-item is-active"
